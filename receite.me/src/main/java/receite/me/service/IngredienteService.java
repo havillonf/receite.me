@@ -21,4 +21,8 @@ public class IngredienteService {
         return ingredienteRepository.findById(id)
                 .orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Ingrediente não encontrado."));
     }
+
+    public List<Ingrediente> findByNome(String nome){
+        return ingredienteRepository.findByNomeContainingIgnoreCase(nome);
+    }
 }

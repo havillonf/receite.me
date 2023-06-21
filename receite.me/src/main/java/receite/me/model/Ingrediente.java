@@ -13,11 +13,11 @@ public class Ingrediente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String Nome;
-    private double Calorias;
-    private double Proteinas;
-    private double Carboidratos;
-    private double Gorduras;
-    private String Medida;
-    private double Quantidade;
+    private String nome;
+    private double calorias;
+    private double proteinas;
+    private double carboidratos;
+    private double gorduras;
+    private String medida;
+    private double quantidade;
 }
