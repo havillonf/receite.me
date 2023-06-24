@@ -6,22 +6,23 @@ import org.springframework.web.bind.annotation.*;
 import receite.me.model.Ingrediente;
 import receite.me.model.Receita;
 import receite.me.service.IngredienteService;
+import receite.me.service.ReceitaService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("ingredientes")
 @RequiredArgsConstructor
-public class IngredienteController {
-    private final IngredienteService ingredienteService;
+public class ReceitaController {
+    private final ReceitaService receitaService;
 
     @GetMapping
-    public ResponseEntity<List<Ingrediente>> list(){
-        return ResponseEntity.ok(ingredienteService.list());
+    public ResponseEntity<List<Receita>> list(){
+        return ResponseEntity.ok(receitaService.list());
     }
 
     @GetMapping("/{nome}")
-    public ResponseEntity<List<Ingrediente>> findByName(@PathVariable("nome") String nome){
-        return ResponseEntity.ok(ingredienteService.findByNome(nome));
+    public ResponseEntity<List<Receita>> findByName(@PathVariable("nome") String nome){
+        return ResponseEntity.ok(receitaService.findByNome(nome));
     }
 }
