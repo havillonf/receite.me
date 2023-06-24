@@ -1,33 +1,27 @@
 package receite.me.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import receite.me.model.Ingrediente;
 import receite.me.model.Receita;
+import receite.me.service.IngredienteService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("receita")
-@CrossOrigin("*")
-public class ReceitaController {
-    @GetMapping("list")
-    public List<Receita> list (){
-        return List.of(Receita.builder()
-                .nome("Guacamole")
-                        .caloriasTotais(20)
-                        .carboidratosTotais(10)
-                        .doce(false)
-                        .gluten(true)
-                        .gordurasTotais(100)
-                        .lactose(true)
-                        .pathImagem("img/guacamole")
-                        .preparo("Preparo da guacamole")
-                        .proteinasTotais(10)
-                        .salgado(true)
-                        .tempoPreparo(1000)
-                        .vegetariano(false)
-                .build());
+@RequestMapping("ingredientes")
+@RequiredArgsConstructor
+public class IngredienteController {
+    private final IngredienteService ingredienteService;
+
+    @GetMapping
+    public ResponseEntity<List<Ingrediente>> list(){
+        return ResponseEntity.ok(ingredienteService.list());
+    }
+
+    @GetMapping("/{nome}")
+    public ResponseEntity<List<Ingrediente>> findByName(@PathVariable("nome") String nome){
+        return ResponseEntity.ok(ingredienteService.findByNome(nome));
     }
 }
