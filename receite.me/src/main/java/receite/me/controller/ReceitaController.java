@@ -11,7 +11,7 @@ import receite.me.service.ReceitaService;
 import java.util.List;
 
 @RestController
-@RequestMapping("ingredientes")
+@RequestMapping("receitas")
 @RequiredArgsConstructor
 public class ReceitaController {
     private final ReceitaService receitaService;

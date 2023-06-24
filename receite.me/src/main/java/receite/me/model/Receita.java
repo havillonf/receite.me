@@ -10,22 +10,22 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "receita", schema = "public")
+@Table(name = "receitas", schema = "public")
 public class Receita {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     String nome;
-    String preparo;
+    String modoDePreparo;
     double caloriasTotais;
     double proteinasTotais;
     double carboidratosTotais;
     double gordurasTotais;
-    double tempoPreparo;
-    boolean gluten;
-    boolean lactose;
-    boolean vegetariano;
-    boolean doce;
-    boolean salgado;
+    double tempoDePreparo;
+    boolean flagGluten;
+    boolean flagLactose;
+    boolean flagVegetariano;
+    boolean flagDoce;
+    boolean flagSalgado;
     String pathImagem;
 }
