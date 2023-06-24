@@ -26,4 +26,5 @@ public class IngredienteController {
     public ResponseEntity<List<Ingrediente>> findByName(@PathVariable("nome") String nome){
         return ResponseEntity.ok(ingredienteService.findByNome(nome));
     }
+
 }

@@ -25,4 +25,10 @@ public class ReceitaController {
     public ResponseEntity<List<Receita>> findByName(@PathVariable("nome") String nome){
         return ResponseEntity.ok(receitaService.findByNome(nome));
     }
+
+    @GetMapping("/filtro/{ingredientes}")
+    public ResponseEntity<List<Receita>> findByIngredientes(@PathVariable("ingredientes") String ingredientes){
+        List<String> nomeIngredientes = List.of(ingredientes.split("><"));
+        return ResponseEntity.ok(receitaService.findByIngredientes(nomeIngredientes));
+    }
 }

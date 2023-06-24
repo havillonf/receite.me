@@ -25,4 +25,8 @@ public class IngredienteService {
     public List<Ingrediente> findByNome(String nome){
         return ingredienteRepository.findByNomeContainingIgnoreCase(nome);
     }
+
+    public List<Ingrediente> findByExactNome(String nome){
+        return ingredienteRepository.findByNomeContainingIgnoreCase(nome);
+    }
 }
