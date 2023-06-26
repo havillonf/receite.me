@@ -19,7 +19,7 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 public class UsuarioController {
     private final UsuarioService usuarioService;
     @GetMapping("/{id}")
-    public ResponseEntity<?> findById(Long id){
+    public ResponseEntity<?> findById(@PathVariable Long id){
         var usuarioOpt = usuarioService.findById(id);
         if(usuarioOpt.isPresent()){
             return ResponseEntity.ok(usuarioOpt.get());
@@ -27,7 +27,7 @@ public class UsuarioController {
         return ResponseEntity.notFound().build();
     }
     @GetMapping("/findByEmail/{email}")
-    public ResponseEntity<?> findByEmail(String email){
+    public ResponseEntity<?> findByEmail(@PathVariable String email){
         var usuarioOpt = usuarioService.findByEmail(email);
         if(usuarioOpt.isPresent()){
             return ResponseEntity.ok(usuarioOpt.get());
