@@ -1,14 +1,15 @@
 package receite.me.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
 @ToString
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "usuarios", schema = "public")
 public class Usuario {
     @Id
@@ -17,6 +18,6 @@ public class Usuario {
     private String email;
     private String nome;
     private String senha;
-    private String pathAvatar;
+    private String avatar;
     private String bio;
 }
