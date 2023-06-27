@@ -19,6 +19,14 @@ public class ReceitaController {
     public ResponseEntity<List<Receita>> list(){
         return ResponseEntity.ok(receitaService.list());
     }
+    @GetMapping("/findById/{id}")
+    public ResponseEntity<?> findById(@PathVariable("id") Long id){
+        try{
+            return ResponseEntity.ok(receitaService.findById(id));
+        }catch (Exception e){
+            return ResponseEntity.notFound().build();
+        }
+    }
     @GetMapping("/{nome}")
     public ResponseEntity<List<Receita>> findByName(@PathVariable("nome") String nome){
         return ResponseEntity.ok(receitaService.findByNome(nome));
