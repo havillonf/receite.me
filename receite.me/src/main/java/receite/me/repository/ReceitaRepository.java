@@ -7,8 +7,8 @@ import receite.me.model.Receita;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 public interface ReceitaRepository extends JpaRepository<Receita, Long> {
     List<Receita> findByNomeContainingIgnoreCase(String name);
-    List<Receita> findByIngredientesIn(List<Ingrediente> ingredientes);
 }

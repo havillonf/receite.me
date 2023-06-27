@@ -9,10 +9,7 @@ import receite.me.model.Receita;
 import receite.me.repository.IngredienteRepository;
 import receite.me.repository.ReceitaRepository;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -33,12 +30,12 @@ public class ReceitaService {
     }
 
     public List<Receita> findByIngredientes(List<String> nomeIngredientes) {
-        ArrayList<Ingrediente> ingredientes = new ArrayList<>();
+        Set<Ingrediente> ingredientes = new HashSet<>();
         nomeIngredientes.forEach(ingrediente -> {
             ingredientes.add(ingredienteRepository.findByNome(ingrediente).get());
         });
-        return receitaRepository.findByIngredientesIn(ingredientes);
-
+        var receitas = receitaRepository.findAll().stream().filter(receita -> ingredientes.containsAll(receita.getIngredientes()));
+        return receitas.toList();
     }
 
 }

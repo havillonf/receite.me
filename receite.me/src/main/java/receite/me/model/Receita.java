@@ -7,6 +7,7 @@ import org.hibernate.annotations.FetchMode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -22,14 +23,14 @@ public class Receita {
     private Long id;
     private String nome;
     @Fetch(FetchMode.SELECT)
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private ArrayList<Ingrediente> ingredientes;
-    String modoDePreparo;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Ingrediente> ingredientes;
+    private double tempoDePreparo;
+    private String modoDePreparo;
     private double caloriasTotais;
     private double proteinasTotais;
     private double carboidratosTotais;
     private double gordurasTotais;
-    private double tempoDePreparo;
     private boolean flagGluten;
     private boolean flagLactose;
     private boolean flagVegetariano;
