@@ -23,4 +23,7 @@ public class UsuarioService {
     public void update(Usuario usuario){
         usuarioRepository.save(usuario);
     }
+    public void delete(Long id){
+        usuarioRepository.delete(this.findById(id).orElseThrow());
+    }
 }

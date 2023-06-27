@@ -14,7 +14,7 @@ import static org.springframework.http.ResponseEntity.created;
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
 
 @RestController
-@RequestMapping("usuario")
+@RequestMapping("usuarios")
 @RequiredArgsConstructor
 public class UsuarioController {
     private final UsuarioService usuarioService;
@@ -62,6 +62,16 @@ public class UsuarioController {
             usuarioService.update(usuario);
             return ResponseEntity.ok().build();
         }else{
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        try{
+            usuarioService.delete(id);
+            return ResponseEntity.ok().build();
+        }catch(Exception e){
             return ResponseEntity.notFound().build();
         }
     }
