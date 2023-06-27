@@ -8,6 +8,7 @@ import receite.me.model.Receita;
 import receite.me.service.IngredienteService;
 import receite.me.service.ReceitaService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -34,5 +35,27 @@ public class ReceitaController {
     @GetMapping("/filtro")
     public ResponseEntity<List<Receita>> findByIngredientes(@RequestBody List<String> ingredientes){
         return ResponseEntity.ok(receitaService.findByIngredientes(ingredientes));
+    }
+    @GetMapping("/filtro/{categoria}")
+    public ResponseEntity<?> findByCategoria(@PathVariable("categoria") String categoria){
+        Object[] receitas = new Object[0];
+        switch (categoria){
+            case "gluten":
+                receitas = receitaService.list().stream().filter(Receita::isFlagGluten).toArray();
+                break;
+            case "lactose":
+                receitas = receitaService.list().stream().filter(Receita::isFlagLactose).toArray();
+                break;
+            case "vegetariano":
+                receitas = receitaService.list().stream().filter(Receita::isFlagVegetariano).toArray();
+                break;
+            case "doce":
+                receitas = receitaService.list().stream().filter(Receita::isFlagDoce).toArray();
+                break;
+            case "salgado":
+                receitas = receitaService.list().stream().filter(Receita::isFlagSalgado).toArray();
+                break;
+        }
+        return ResponseEntity.ok(receitas);
     }
 }
