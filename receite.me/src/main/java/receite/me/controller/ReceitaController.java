@@ -32,7 +32,7 @@ public class ReceitaController {
     public ResponseEntity<List<Receita>> findByName(@PathVariable("nome") String nome){
         return ResponseEntity.ok(receitaService.findByNome(nome));
     }
-    @GetMapping("/filtro")
+    @PostMapping("/filtro")
     public ResponseEntity<List<Receita>> findByIngredientes(@RequestBody List<String> ingredientes){
         return ResponseEntity.ok(receitaService.findByIngredientes(ingredientes));
     }

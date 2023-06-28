@@ -23,7 +23,7 @@ public class Receita {
     private Long id;
     private String nome;
     @Fetch(FetchMode.SELECT)
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany
     private Set<Ingrediente> ingredientes;
     private double tempoDePreparo;
     private String modoDePreparo;
