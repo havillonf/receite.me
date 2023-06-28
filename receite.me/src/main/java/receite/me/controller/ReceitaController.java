@@ -9,7 +9,9 @@ import receite.me.service.IngredienteService;
 import receite.me.service.ReceitaService;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("receitas")
@@ -39,5 +41,9 @@ public class ReceitaController {
     @GetMapping("/filtro/{categoria}")
     public ResponseEntity<?> findByCategoria(@PathVariable("categoria") String categoria){
         return ResponseEntity.ok(receitaService.findByFlag(categoria));
+    }
+    @GetMapping("recomendacoes")
+    public ResponseEntity<?> recomendacoes(){
+        return ResponseEntity.ok(new HashSet<>(receitaService.list().subList(0,10)));
     }
 }

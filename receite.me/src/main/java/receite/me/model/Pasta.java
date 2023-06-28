@@ -6,6 +6,7 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -25,5 +26,5 @@ public class Pasta {
     private Usuario usuario;
     @Fetch(FetchMode.SELECT)
     @ManyToMany(cascade = CascadeType.REFRESH)
-    private List<Receita> receitas;
+    private Set<Receita> receitas;
 }

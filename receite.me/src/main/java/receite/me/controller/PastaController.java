@@ -15,11 +15,16 @@ import java.util.List;
 public class PastaController {
     private final PastaService pastaService;
     private final ReceitaService receitaService;
+    @GetMapping("/favoritos/{idUsuario}")
+    public ResponseEntity<?> getFavoritos(@PathVariable("idUsuario") Long idUsuario){
+        return ResponseEntity.ok(pastaService.findPastaFavoritaByUsuario(idUsuario).getReceitas());
+    }
     @PostMapping("/{idReceita}/{idUsuario}")
     public ResponseEntity<Void> alterarFavorito(@PathVariable("idReceita") Long idReceita, @PathVariable("idUsuario") Long idUsuario){
         try{
             var pasta = pastaService.findPastaFavoritaByUsuario(idUsuario);
             var receita = receitaService.findById(idReceita);
+            System.out.println(receita);
             if(pasta.getReceitas().contains(receita)){
                 pasta.getReceitas().remove(receita);
             }else {
