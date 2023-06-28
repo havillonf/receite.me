@@ -11,4 +11,9 @@ import java.util.Set;
 
 public interface ReceitaRepository extends JpaRepository<Receita, Long> {
     List<Receita> findByNomeContainingIgnoreCase(String name);
+    List<Receita> findReceitasByFlagGluten(boolean flagGluten);
+    List<Receita> findReceitasByFlagLactose(boolean flagLactose);
+    List<Receita> findReceitasByFlagVegetariano(boolean flagVegetariano);
+    List<Receita> findReceitasByFlagDoce(boolean flagDoce);
+    List<Receita> findReceitasByFlagSalgado(boolean flagSalgado);
 }

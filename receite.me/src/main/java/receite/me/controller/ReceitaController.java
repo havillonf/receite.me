@@ -38,24 +38,6 @@ public class ReceitaController {
     }
     @GetMapping("/filtro/{categoria}")
     public ResponseEntity<?> findByCategoria(@PathVariable("categoria") String categoria){
-        Object[] receitas = new Object[0];
-        switch (categoria){
-            case "gluten":
-                receitas = receitaService.list().stream().filter(Receita::isFlagGluten).toArray();
-                break;
-            case "lactose":
-                receitas = receitaService.list().stream().filter(Receita::isFlagLactose).toArray();
-                break;
-            case "vegetariano":
-                receitas = receitaService.list().stream().filter(Receita::isFlagVegetariano).toArray();
-                break;
-            case "doce":
-                receitas = receitaService.list().stream().filter(Receita::isFlagDoce).toArray();
-                break;
-            case "salgado":
-                receitas = receitaService.list().stream().filter(Receita::isFlagSalgado).toArray();
-                break;
-        }
-        return ResponseEntity.ok(receitas);
+        return ResponseEntity.ok(receitaService.findByFlag(categoria));
     }
 }

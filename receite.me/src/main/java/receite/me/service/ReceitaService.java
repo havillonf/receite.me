@@ -38,4 +38,31 @@ public class ReceitaService {
         return receitas.toList();
     }
 
+    public List<Receita> findByFlag(String categoria){
+        return switch (categoria) {
+            case "gluten" -> this.findByFlagGluten(true);
+            case "lactose" -> this.findByFlagLactose(true);
+            case "vegetariano" -> this.findByFlagVegetariano(true);
+            case "doce" -> this.findByFlagDoce(true);
+            case "salgado" -> this.findByFlagSalgado(true);
+            default -> null;
+        };
+    }
+
+    private List<Receita> findByFlagSalgado(boolean b) {
+        return receitaRepository.findReceitasByFlagSalgado(b);
+    }
+    private List<Receita> findByFlagDoce(boolean b) {
+        return receitaRepository.findReceitasByFlagDoce(b);
+    }
+
+    public List<Receita> findByFlagGluten(boolean flagGluten){
+        return receitaRepository.findReceitasByFlagGluten(flagGluten);
+    }
+    public List<Receita> findByFlagLactose(boolean flagLactose){
+        return receitaRepository.findReceitasByFlagLactose(flagLactose);
+    }
+    public List<Receita> findByFlagVegetariano(boolean flagVegetariano){
+        return receitaRepository.findReceitasByFlagVegetariano(flagVegetariano);
+    }
 }
