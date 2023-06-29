@@ -47,7 +47,7 @@ public class UsuarioController {
         var usr = usuarioService.findByEmail(usuario.getEmail());
         if(usr.isPresent()){
             if(usr.get().getSenha().equals(usuario.getSenha())){
-                return ResponseEntity.ok().build();
+                return ResponseEntity.ok(usr);
             }else{
                 return ResponseEntity.badRequest().build();
             }

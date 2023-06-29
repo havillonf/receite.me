@@ -3,6 +3,7 @@ package receite.me.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import receite.me.dto.ResponseDto;
 import receite.me.model.Receita;
 import receite.me.service.PastaService;
 import receite.me.service.ReceitaService;
@@ -20,20 +21,20 @@ public class PastaController {
         return ResponseEntity.ok(pastaService.findPastaFavoritaByUsuario(idUsuario).getReceitas());
     }
     @PostMapping("/{idReceita}/{idUsuario}")
-    public ResponseEntity<Void> alterarFavorito(@PathVariable("idReceita") Long idReceita, @PathVariable("idUsuario") Long idUsuario){
+    public ResponseEntity<?> alterarFavorito(@PathVariable("idReceita") Long idReceita, @PathVariable("idUsuario") Long idUsuario){
         try{
+            var body = true;
             var pasta = pastaService.findPastaFavoritaByUsuario(idUsuario);
             var receita = receitaService.findById(idReceita);
-            System.out.println(receita);
             if(pasta.getReceitas().contains(receita)){
                 pasta.getReceitas().remove(receita);
+                body = false;
             }else {
                 pasta.getReceitas().add(receita);
             }
             pastaService.updatePasta(pasta);
-            return ResponseEntity.ok().build();
+            return ResponseEntity.ok(ResponseDto.builder().message(body).build());
         }catch (Exception e){
-            System.out.printf("erro: "+e.getMessage());
             return ResponseEntity.notFound().build();
         }
     }
