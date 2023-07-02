@@ -1,0 +1,20 @@
+version: '3.2'
+services:
+  postgres:
+    restart: always
+    image: postgres:15.3
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_PASSWORD=6tzBvkNpRshQpGAGLC4YpCYMC9bsymli
+      - POSTGRES_USER=receitemeusername
+      - POSTGRES_DB=receiteme
+  # APP**
+  web:
+    build: .
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://dpg-cigeip59aq012ev6gqsg-a.oregon-postgres.render.com:5432/receiteme
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
