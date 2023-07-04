@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-cigeip59aq012ev6gqsg-a:5432/receiteme
+    url: jdbc:postgresql://dpg-cigeip59aq012ev6gqsg-a.oregon-postgres.render.com:5432/receiteme
     username: receitemeusername
     password: 6tzBvkNpRshQpGAGLC4YpCYMC9bsymli
     driver-class-name: org.postgresql.Driver
