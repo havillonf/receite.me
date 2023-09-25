@@ -4,10 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import receite.me.model.Ingrediente;
+import receite.me.model.Problem;
 import receite.me.model.Usuario;
 import receite.me.service.IngredienteService;
 import receite.me.service.UsuarioService;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.springframework.http.ResponseEntity.created;
@@ -35,11 +37,16 @@ public class UsuarioController {
         return ResponseEntity.notFound().build();
     }
     @PostMapping
-    public ResponseEntity<Void> create(@RequestBody Usuario usuario){
-        return created(fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(usuarioService.create(usuario)).toUri())
-                .build();
+    public ResponseEntity<?> create(@RequestBody Usuario usuario){
+        try {
+            return created(fromCurrentRequest()
+                    .path("/{id}")
+                    .buildAndExpand(usuarioService.create(usuario)).toUri())
+                    .build();
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(
+                    Problem.builder().status(400).exception(e.getMessage()).ocurredAt(LocalDateTime.now()).build());
+        }
     }
 
     @PostMapping("/login")
