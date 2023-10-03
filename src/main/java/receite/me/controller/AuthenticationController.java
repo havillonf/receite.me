@@ -25,7 +25,7 @@ public class AuthenticationController {
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody RegisterRequest request){
         try {
-            return ResponseEntity.ok(authenticationService.create(request));
+            return ResponseEntity.ok(authenticationService.register(request));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
                     Problem.builder().status(400).exception(e.getMessage()).ocurredAt(LocalDateTime.now()).build());
