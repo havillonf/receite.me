@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://silly.db.elephantsql.com:5432/uwqshsfe
-    username: uwqshsfe
-    password: 5mviWguVG3lLs6rQplsGpU84x_M9p06V
+    url: jdbc:postgresql://dpg-cklcuj3j89us73dv9qbg-a.oregon-postgres.render.com:5432/receiteme_edmw
+    username: receitemeusername
+    password: bd07UcI5A7wIJ19SdiYaNxUPvl5McxJc
     driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
