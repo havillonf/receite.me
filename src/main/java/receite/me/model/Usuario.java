@@ -20,4 +20,5 @@ public class Usuario {
     private String senha;
     private String avatar;
     private String bio;
+    private String codigoSenha;
 }

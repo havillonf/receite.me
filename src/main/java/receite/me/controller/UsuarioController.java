@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import receite.me.model.Ingrediente;
+import receite.me.model.ResetPasswordData;
 import receite.me.model.Usuario;
 import receite.me.service.IngredienteService;
 import receite.me.service.UsuarioService;
@@ -70,6 +71,26 @@ public class UsuarioController {
     public ResponseEntity<Void> delete(@PathVariable Long id){
         try{
             usuarioService.delete(id);
+            return ResponseEntity.ok().build();
+        }catch(Exception e){
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PostMapping("/request_reset/{email}")
+    public ResponseEntity<?> requestPasswordReset(@PathVariable String email){
+        try {
+            usuarioService.requestPasswordReset(email);
+            return ResponseEntity.ok().build();
+        }catch(Exception e){
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PostMapping("/reset")
+    public ResponseEntity<?> resetPassword(@RequestBody ResetPasswordData newPasswordData) {
+        try {
+            usuarioService.resetPassword(newPasswordData);
             return ResponseEntity.ok().build();
         }catch(Exception e){
             return ResponseEntity.notFound().build();
