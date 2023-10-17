@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/receiteme_edmw
-    username: admin
-    password: admin
+    url: jdbc:postgresql://dpg-cklcuj3j89us73dv9qbg-a/receiteme_edmw
+    username: receitemeusername
+    password: bd07UcI5A7wIJ19SdiYaNxUPvl5McxJc
     driver-class-name: org.postgresql.Driver
   jpa:
     properties:
