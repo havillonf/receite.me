@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://dpg-cknbtjiv7m0s73e1r9j0-a.oregon-postgres.render.com:5432/receiteme_qc14
     username: receitemeusername
-    password: Rehyk80NiiYTEzUw8tvotff8eYAWXUcj
+    password: Rehyk80NiiYTEzUw8tvotff8eYAWXUc
     driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
