@@ -1,8 +1,18 @@
 spring:
   datasource:
-    url: jdbc:postgresql://silly.db.elephantsql.com:5432/uwqshsfe
-    username: uwqshsfe
-    password: 5mviWguVG3lLs6rQplsGpU84x_M9p06V
+    url: jdbc:postgresql://localhost:5432/receiteme
+    username: receiteme
+    password: receiteme
     driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: receite.me.app@gmail.com
+    password: vosxbvsnnghydtgr
+    protocol: smtp
+    properties.mail.smtp:
+          auth: true
+          starttls.enable: true
+          ssl.trust: smtp.gmail.com

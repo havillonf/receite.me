@@ -1,10 +1,11 @@
 package receite.me.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import receite.me.model.Ingrediente;
-import receite.me.model.ResetPasswordData;
+import receite.me.model.ResetarSenhaInfo;
 import receite.me.model.Usuario;
 import receite.me.service.IngredienteService;
 import receite.me.service.UsuarioService;
@@ -18,6 +19,7 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 @RequestMapping("usuarios")
 @RequiredArgsConstructor
 public class UsuarioController {
+    @Autowired
     private final UsuarioService usuarioService;
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id){
@@ -77,7 +79,7 @@ public class UsuarioController {
         }
     }
 
-    @PostMapping("/request_reset/{email}")
+    @GetMapping("/request_reset/{email}")
     public ResponseEntity<?> requestPasswordReset(@PathVariable String email){
         try {
             usuarioService.requestPasswordReset(email);
@@ -88,7 +90,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/reset")
-    public ResponseEntity<?> resetPassword(@RequestBody ResetPasswordData newPasswordData) {
+    public ResponseEntity<?> resetPassword(@RequestBody ResetarSenhaInfo newPasswordData) {
         try {
             usuarioService.resetPassword(newPasswordData);
             return ResponseEntity.ok().build();

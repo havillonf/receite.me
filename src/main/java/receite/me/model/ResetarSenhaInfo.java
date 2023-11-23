@@ -1,6 +1,5 @@
 package receite.me.model;
 
-import jakarta.persistence.Entity;
 import lombok.*;
 
 @Getter
@@ -9,8 +8,8 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResetPasswordData {
+public class ResetarSenhaInfo {
     private String email;
     private String codigo;
-    private String password;
+    private String novaSenha;
 }

@@ -3,7 +3,7 @@ package receite.me.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import receite.me.model.ResetPasswordData;
+import receite.me.model.ResetarSenhaInfo;
 import receite.me.model.Usuario;
 import receite.me.repository.UsuarioRepository;
 import java.util.concurrent.ThreadLocalRandom;
@@ -39,6 +39,7 @@ public class UsuarioService {
         user.setCodigoSenha(
                 Integer.toString(ThreadLocalRandom.current().nextInt(100000, 999999 + 1))
         );
+        usuarioRepository.save(user);
         emailSender.sendEmail(
                 email,
                 "Recuperação de senha Receite.me",
@@ -46,12 +47,12 @@ public class UsuarioService {
         );
     }
 
-    public void resetPassword(ResetPasswordData newPasswordData) throws Exception {
+    public void resetPassword(ResetarSenhaInfo newPasswordData) throws Exception {
         Usuario user = usuarioRepository.findByEmail(newPasswordData.getEmail()).orElseThrow();
         if (!newPasswordData.getCodigo().equals(user.getCodigoSenha()))
             throw new Exception();
 
-        user.setSenha(newPasswordData.getPassword());
+        user.setSenha(newPasswordData.getNovaSenha());
         usuarioRepository.save(user);
     }
 }
