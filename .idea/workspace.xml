@@ -5,30 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84f89ad1-87d1-4c31-8b36-0593d14007ea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/receite/me/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/receite/me/config/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/receite/me/config/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/receite/me/config/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/receite/me/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/receite/me/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/auth/AuthenticationRequest$AuthenticationRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/auth/AuthenticationRequest$AuthenticationRequestBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/auth/AuthenticationRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/auth/AuthenticationRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/auth/AuthenticationResponse$AuthenticationResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/auth/AuthenticationResponse$AuthenticationResponseBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/auth/AuthenticationResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/auth/AuthenticationResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/auth/RegisterRequest$RegisterRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/auth/RegisterRequest$RegisterRequestBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/auth/RegisterRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/auth/RegisterRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/config/ApplicationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/config/ApplicationConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/config/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/config/JwtAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/config/JwtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/config/JwtService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/config/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/config/SecurityConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Problem$ProblemBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/model/Problem$ProblemBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Problem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/model/Problem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Receita$ReceitaBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/model/Receita$ReceitaBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Receita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/model/Receita.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Usuario$UsuarioBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/model/Usuario$UsuarioBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/usuario/Cargo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/model/usuario/Cargo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/service/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/service/AuthenticationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/ApplicationStart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/controller/IngredienteController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/controller/ReceitaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/controller/UsuarioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Problem$ProblemBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Problem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Usuario$UsuarioBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Usuario.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,40 +37,36 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
+    &quot;associatedIndex&quot;: 5
+    }</component>
   <component name="ProjectId" id="2VahZQgC5D9sw4PiuocAkaFZDlJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "authentication",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.5045977",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "spring.configuration.checksum": "1b1bf3493c28cf4fcfc13bb82ce1fcd0",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">{
+    &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;authentication&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.5045977&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;1b1bf3493c28cf4fcfc13bb82ce1fcd0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+    }
+    }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="receite.me.config" />
@@ -124,22 +107,10 @@
       <workItem from="1695589578848" duration="14012000" />
       <workItem from="1696296537115" duration="724000" />
       <workItem from="1696297279094" duration="309000" />
-      <workItem from="1700826109041" duration="6268000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/receite/me/controller/AuthenticationController.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
