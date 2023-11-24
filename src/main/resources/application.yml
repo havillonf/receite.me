@@ -1,8 +1,18 @@
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-cigeip59aq012ev6gqsg-a.oregon-postgres.render.com:5432/receiteme
-    username: receitemeusername
-    password: 6tzBvkNpRshQpGAGLC4YpCYMC9bsymli
+    url: jdbc:postgresql://dpg-cl8e6ff6e7vc73a573l0-a.oregon-postgres.render.com/receiteme_10yi
+    username: receitemeuser
+    password: i5HaJFvv35sr8CbhuKFqgTK7RjRBcPbZ
     driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: receite.me.app@gmail.com
+    password: vosxbvsnnghydtgr
+    protocol: smtp
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
