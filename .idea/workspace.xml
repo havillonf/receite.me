@@ -4,42 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84f89ad1-87d1-4c31-8b36-0593d14007ea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/config/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/config/JwtAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/config/JwtService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/config/SecurityConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/controller/AuthenticationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/controller/IngredienteController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/controller/PastaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/controller/ReceitaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/controller/UsuarioController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/dto/ResponseDto$ResponseDtoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/dto/ResponseDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Ingrediente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Pasta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Problem$ProblemBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Problem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Receita$ReceitaBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Receita.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/ResetarSenhaInfo$ResetarSenhaInfoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/ResetarSenhaInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Usuario$UsuarioBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/model/Usuario$UsuarioBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/repository/IngredienteRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/repository/PastaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/repository/ReceitaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/service/AuthenticationService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/service/EmailSenderService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/service/IngredienteService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/service/PastaService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/service/ReceitaService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/service/UsuarioService.class" beforeDir="false" />
-    </list>
+    <list default="true" id="84f89ad1-87d1-4c31-8b36-0593d14007ea" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,28 +33,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.5045977&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;1b1bf3493c28cf4fcfc13bb82ce1fcd0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.5045977",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "1b1bf3493c28cf4fcfc13bb82ce1fcd0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="receite.me.config" />
@@ -131,7 +101,7 @@
       <workItem from="1696296537115" duration="724000" />
       <workItem from="1696297279094" duration="309000" />
       <workItem from="1701460597315" duration="180000" />
-      <workItem from="1701461157956" duration="312000" />
+      <workItem from="1701461157956" duration="588000" />
     </task>
     <servers />
   </component>
