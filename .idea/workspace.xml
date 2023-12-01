@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84f89ad1-87d1-4c31-8b36-0593d14007ea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/ApplicationStart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/controller/IngredienteController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/controller/ReceitaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/controller/UsuarioController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Problem$ProblemBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Problem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Usuario$UsuarioBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/model/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/receite/me/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/receite/me/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/config/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/config/JwtAuthenticationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/config/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/config/SecurityConfiguration.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +40,15 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
-    &quot;keyToString&quot;: {
+  &quot;keyToString&quot;: {
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
@@ -65,8 +63,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;1b1bf3493c28cf4fcfc13bb82ce1fcd0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-    }
-    }</component>
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="receite.me.config" />
@@ -107,6 +105,9 @@
       <workItem from="1695589578848" duration="14012000" />
       <workItem from="1696296537115" duration="724000" />
       <workItem from="1696297279094" duration="309000" />
+      <workItem from="1701205247678" duration="355000" />
+      <workItem from="1701221528761" duration="1115000" />
+      <workItem from="1701464597814" duration="496000" />
     </task>
     <servers />
   </component>
