@@ -33,7 +33,7 @@ public class AuthenticationService {
                 .build();
         usuarioRepository.save(usuario).getId();
         var jwt = jwtService.generateToken(usuario);
-        return AuthenticationResponse.builder().token(jwt).build();
+        return AuthenticationResponse.builder().token(jwt).user(usuario).build();
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) throws UsernameNotFoundException {
