@@ -1,5 +1,6 @@
 package receite.me.auth;
 
+import receite.me.model.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,4 +12,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AuthenticationResponse {
     String token;
+    Usuario user;
 }
