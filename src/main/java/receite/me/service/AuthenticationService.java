@@ -46,7 +46,7 @@ public class AuthenticationService {
         var usuario = usuarioRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new UsernameNotFoundException(""));
         var jwt = jwtService.generateToken(usuario);
-        return AuthenticationResponse.builder().token(jwt).build();
+        return AuthenticationResponse.builder().token(jwt).user(usuario).build();
     }
 
 }
