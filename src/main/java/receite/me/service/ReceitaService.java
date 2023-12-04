@@ -41,8 +41,7 @@ public class ReceitaService {
     public List<Receita> findByFlag(String categoria){
         return switch (categoria) {
             case "gluten" -> this.findByFlagGluten(true);
-            case "lactose" -> this.findByFlagLactose(true);
-            case "semLactose" -> this.findByFlagLactose(false);
+            case "lactose" -> this.findByFlagLactose(false);
             case "vegetariano" -> this.findByFlagVegetariano(true);
             case "doce" -> this.findByFlagDoce(true);
             case "salgado" -> this.findByFlagSalgado(true);
