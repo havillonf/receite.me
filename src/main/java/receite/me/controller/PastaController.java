@@ -81,4 +81,17 @@ public class PastaController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @PostMapping("/add-receita/{idPasta}/{idReceita}")
+    public ResponseEntity<?> addReceitaById(@PathVariable("idPasta") Long idPasta, @PathVariable("idReceita") Long idReceita){
+        try{
+            var pasta = pastaService.findById(idPasta);
+            var receita = receitaService.findById(idReceita);
+            pasta.getReceitas().add(receita);
+            pastaService.updatePasta(pasta);
+            return ResponseEntity.ok().build();
+        }catch(Exception e){
+            return ResponseEntity.badRequest().build();
+        }
+    }
 }
