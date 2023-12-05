@@ -19,6 +19,10 @@ public class PastaController {
     private final PastaService pastaService;
     private final ReceitaService receitaService;
     private final UsuarioService usuarioService;
+    @GetMapping("/list")
+    public ResponseEntity<?> listPastas(){
+        return ResponseEntity.ok(pastaService.list());
+    }
     @GetMapping("/{idPasta}")
     public ResponseEntity<?> getPasta(@PathVariable("idPasta") Long idPasta){
         try{
