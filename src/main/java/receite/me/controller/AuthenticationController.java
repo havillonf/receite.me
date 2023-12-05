@@ -45,7 +45,7 @@ public class AuthenticationController {
     }
     
     @PostMapping("/passwordConfirmation")
-    public ResponseEntity<?> authenticate(@RequestBody AuthenticationRequest request){
+    public ResponseEntity<?> passwordConfirmation(@RequestBody AuthenticationRequest request){
         try {
             return ResponseEntity.ok(authenticationService.confirm(request));
         }
