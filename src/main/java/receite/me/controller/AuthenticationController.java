@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import receite.me.auth.AuthenticationRequest;
+import receite.me.auth.AuthenticationResponse;
 import receite.me.auth.RegisterRequest;
 import receite.me.model.Problem;
 import receite.me.service.AuthenticationService;
@@ -40,6 +41,16 @@ public class AuthenticationController {
         catch (Exception e) {
             return ResponseEntity.badRequest().body(
                     Problem.builder().status(400).exception(e.getMessage()).ocurredAt(LocalDateTime.now()).build());
+        }
+    }
+    
+    @PostMapping("/passwordConfirmation")
+    public ResponseEntity<?> authenticate(@RequestBody AuthenticationRequest request){
+        try {
+            return ResponseEntity.ok(authenticationService.confirm(request));
+        }
+        catch (Exception e) {
+            return ResponseEntity.ok(AuthenticationResponse.builder().token("false").build());
         }
     }
 }
