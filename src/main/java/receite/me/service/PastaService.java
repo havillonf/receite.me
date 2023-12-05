@@ -15,6 +15,7 @@ import receite.me.repository.PastaRepository;
 import receite.me.repository.UsuarioRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -26,5 +27,12 @@ public class PastaService {
     }
     public void updatePasta(Pasta pasta){
         pastaRepository.save(pasta);
+    }
+    public Long createPasta(Pasta pasta){
+        return pastaRepository.save(pasta).getId();
+    }
+    public Pasta findById(Long id){
+        Optional<Pasta> pastaOptional = pastaRepository.findById(id);
+        return pastaOptional.orElse(null);
     }
 }
