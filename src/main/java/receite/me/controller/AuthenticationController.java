@@ -50,7 +50,7 @@ public class AuthenticationController {
             return ResponseEntity.ok(authenticationService.confirm(request));
         }
         catch (Exception e) {
-            return ResponseEntity.ok("false");
+            return ResponseEntity.badRequest().body(false);
         }
     }
 }
