@@ -19,6 +19,15 @@ public class PastaController {
     private final PastaService pastaService;
     private final ReceitaService receitaService;
     private final UsuarioService usuarioService;
+    @GetMapping("/pastas/{idPasta}")
+    public ResponseEntity<?> getPasta(@PathVariable("idPasta") Long idPasta){
+        try{
+            return ResponseEntity.ok(pastaService.findById(idPasta));
+        }catch (Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+
+    }
     @GetMapping("/favoritos/{idUsuario}")
     public ResponseEntity<?> getFavoritos(@PathVariable("idUsuario") Long idUsuario){
         return ResponseEntity.ok(pastaService.findPastaFavoritaByUsuario(idUsuario).getReceitas());
