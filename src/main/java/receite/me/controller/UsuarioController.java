@@ -99,7 +99,17 @@ public class UsuarioController {
     @PostMapping("/reset")
     public ResponseEntity<?> resetPassword(@RequestBody ResetarSenhaInfo newPasswordData) {
         try {
-            usuarioService.resetPassword(newPasswordData);
+            usuarioService.resetPassword(newPasswordData, true);
+            return ResponseEntity.ok().build();
+        }catch(Exception e){
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PostMapping("/resetWithoutCode")
+    public ResponseEntity<?> resetPasswordWithoutCode(@RequestBody ResetarSenhaInfo newPasswordData) {
+        try {
+            usuarioService.resetPassword(newPasswordData, false);
             return ResponseEntity.ok().build();
         }catch(Exception e){
             return ResponseEntity.notFound().build();
