@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="84f89ad1-87d1-4c31-8b36-0593d14007ea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/controller/PastaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/controller/PastaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/receite/me/service/PastaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/receite/me/service/PastaService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +108,7 @@
       <workItem from="1701461157956" duration="588000" />
       <workItem from="1701732172644" duration="1584000" />
       <workItem from="1701733781446" duration="5316000" />
-      <workItem from="1701744031112" duration="2200000" />
+      <workItem from="1701744031112" duration="3384000" />
     </task>
     <servers />
   </component>
@@ -131,6 +133,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/receite/me/config/JwtAuthenticationFilter.java</url>
           <line>36</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/receite/me/controller/UsuarioController.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

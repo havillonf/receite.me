@@ -72,7 +72,7 @@ public class PastaController {
     @GetMapping("/{idPasta}/receitas")
     public ResponseEntity<?> getReceitasByPasta(@PathVariable("idPasta") Long idPasta){
         try{
-            return ResponseEntity.ok(pastaService.findById(idPasta));
+            return ResponseEntity.ok(pastaService.findById(idPasta).getReceitas());
         }catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
