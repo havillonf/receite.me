@@ -49,11 +49,13 @@ public class UsuarioService {
         );
     }
 
-    public void resetPassword(ResetarSenhaInfo newPasswordData) throws Exception {
-        Usuario user = usuarioRepository.findByEmail(newPasswordData.getEmail()).orElseThrow();
-        if (!newPasswordData.getCodigo().equals(user.getCodigoSenha()))
-            throw new Exception();
-
+    public void resetPassword(ResetarSenhaInfo newPasswordData, boolean needsCode) throws Exception {
+        if (needsCode) {
+            Usuario user = usuarioRepository.findByEmail(newPasswordData.getEmail()).orElseThrow();
+            if (!newPasswordData.getCodigo().equals(user.getCodigoSenha()))
+                throw new Exception();
+        }
+        
         user.setSenha(passwordEncoder.encode(newPasswordData.getNovaSenha()));
         usuarioRepository.save(user);
     }
