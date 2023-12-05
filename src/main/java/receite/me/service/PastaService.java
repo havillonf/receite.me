@@ -35,4 +35,7 @@ public class PastaService {
         Optional<Pasta> pastaOptional = pastaRepository.findById(id);
         return pastaOptional.orElse(null);
     }
+    public List<Pasta> list(){
+        return pastaRepository.findAll();
+    }
 }

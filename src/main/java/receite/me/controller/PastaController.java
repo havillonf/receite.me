@@ -26,7 +26,14 @@ public class PastaController {
         }catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
-
+    }
+    @GetMapping("/list-usuario/{idUsuario")
+    public ResponseEntity<?> getPastasOfUser(@PathVariable("idUsuario") Long idUsuario){
+        List<Pasta> pastas = pastaService.list()
+                .stream()
+                .filter(pasta -> pasta.getUsuario().getId().equals(idUsuario))
+                .toList();
+        return ResponseEntity.ok(pastas);
     }
     @GetMapping("/favoritos/{idUsuario}")
     public ResponseEntity<?> getFavoritos(@PathVariable("idUsuario") Long idUsuario){
