@@ -27,7 +27,7 @@ public class PastaController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-    @GetMapping("/list-usuario/{idUsuario")
+    @GetMapping("/list-usuario/{idUsuario}")
     public ResponseEntity<?> getPastasOfUser(@PathVariable("idUsuario") Long idUsuario){
         List<Pasta> pastas = pastaService.list()
                 .stream()
