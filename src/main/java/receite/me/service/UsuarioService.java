@@ -50,8 +50,8 @@ public class UsuarioService {
     }
 
     public void resetPassword(ResetarSenhaInfo newPasswordData, boolean needsCode) throws Exception {
+        Usuario user = usuarioRepository.findByEmail(newPasswordData.getEmail()).orElseThrow();
         if (needsCode) {
-            Usuario user = usuarioRepository.findByEmail(newPasswordData.getEmail()).orElseThrow();
             if (!newPasswordData.getCodigo().equals(user.getCodigoSenha()))
                 throw new Exception();
         }
