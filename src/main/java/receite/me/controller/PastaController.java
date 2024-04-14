@@ -19,7 +19,7 @@ public class PastaController {
     private final PastaService pastaService;
     private final ReceitaService receitaService;
     private final UsuarioService usuarioService;
-    @GetMapping("/list")
+    @GetMapping("/list/{id}")
     public ResponseEntity<?> listPastas(){
         return ResponseEntity.ok(pastaService.list());
     }
