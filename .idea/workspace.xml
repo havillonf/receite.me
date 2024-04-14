@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84f89ad1-87d1-4c31-8b36-0593d14007ea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_11_2023_23_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_11_2023_23_07__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/receite/me/controller/PastaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/receite/me/controller/PastaController.java" afterDir="false" />
     </list>
@@ -50,7 +52,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+<<<<<<< HEAD
     "last_opened_file_path": "C:/Users/havil/Downloads/erc",
+=======
+    "ignore.virus.scanning.warn.message": "true",
+>>>>>>> c1b503d69763360f6fc50f0f1935ee879ec110c0
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -108,9 +114,14 @@
       <workItem from="1701461157956" duration="588000" />
       <workItem from="1701732172644" duration="1584000" />
       <workItem from="1701733781446" duration="5316000" />
+<<<<<<< HEAD
       <workItem from="1701744031112" duration="3779000" />
       <workItem from="1712262001703" duration="609000" />
       <workItem from="1712263455263" duration="69000" />
+=======
+      <workItem from="1701744031112" duration="3384000" />
+      <workItem from="1701789900123" duration="1786000" />
+>>>>>>> c1b503d69763360f6fc50f0f1935ee879ec110c0
     </task>
     <servers />
   </component>
@@ -135,11 +146,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/receite/me/config/JwtAuthenticationFilter.java</url>
           <line>36</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/receite/me/controller/UsuarioController.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
