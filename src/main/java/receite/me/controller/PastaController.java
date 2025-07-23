@@ -2,7 +2,12 @@ package receite.me.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import receite.me.dto.PastaDto;
 import receite.me.dto.ResponseDto;
 import receite.me.mapper.PastaMapper;
@@ -10,7 +15,6 @@ import receite.me.mapper.ReceitaMapper;
 import receite.me.model.Pasta;
 import receite.me.service.PastaService;
 import receite.me.service.ReceitaService;
-import receite.me.service.UsuarioService;
 
 import java.util.stream.Collectors;
 
@@ -20,7 +24,6 @@ import java.util.stream.Collectors;
 public class PastaController {
     private final PastaService pastaService;
     private final ReceitaService receitaService;
-    private final UsuarioService usuarioService;
     private final PastaMapper pastaMapper;
     private final ReceitaMapper receitaMapper;
 

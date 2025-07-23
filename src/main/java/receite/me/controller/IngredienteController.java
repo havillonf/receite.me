@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import receite.me.model.Problem;
 import receite.me.service.IngredienteService;
 import receite.me.factory.ProblemFactory;
 

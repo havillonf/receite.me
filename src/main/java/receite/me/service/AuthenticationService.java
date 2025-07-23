@@ -10,7 +10,6 @@ import receite.me.auth.AuthenticationRequest;
 import receite.me.auth.AuthenticationResponse;
 import receite.me.auth.RegisterRequest;
 import receite.me.config.JwtService;
-import receite.me.dto.UsuarioDto;
 import receite.me.mapper.UsuarioMapper;
 import receite.me.model.Usuario;
 import receite.me.model.usuario.Cargo;
