@@ -7,10 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import receite.me.dto.UsuarioDto;
 import receite.me.mapper.UsuarioMapper;
 import receite.me.model.ResetarSenhaInfo;
-import receite.me.model.Problem;
 import receite.me.service.UsuarioService;
-
-import java.time.LocalDateTime;
+import receite.me.factory.ProblemFactory;
 
 import static org.springframework.http.ResponseEntity.created;
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
@@ -22,6 +20,7 @@ public class UsuarioController {
     @Autowired
     private final UsuarioService usuarioService;
     private final UsuarioMapper usuarioMapper;
+    private final ProblemFactory problemFactory;
 
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id){
@@ -48,7 +47,7 @@ public class UsuarioController {
                     .build();
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    Problem.builder().status(400).exception(e.getMessage()).ocurredAt(LocalDateTime.now()).build());
+                    problemFactory.createBadRequest(e.getMessage()));
         }
     }
 

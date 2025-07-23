@@ -3,23 +3,21 @@ package receite.me.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import receite.me.model.Ingrediente;
 import receite.me.model.Problem;
-import receite.me.model.Receita;
-import receite.me.service.IngredienteService;
 import receite.me.service.ReceitaService;
+import receite.me.factory.ProblemFactory;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("receitas")
 @RequiredArgsConstructor
 public class ReceitaController {
     private final ReceitaService receitaService;
+    private final ProblemFactory problemFactory;
+
     @GetMapping
     public ResponseEntity<?> list(){
         try{
@@ -34,7 +32,7 @@ public class ReceitaController {
             return ResponseEntity.ok(receitaService.findById(id));
         }catch (Exception e){
             return ResponseEntity.badRequest().body(
-                    Problem.builder().status(400).exception(e.getMessage()).ocurredAt(LocalDateTime.now()).build());
+                    problemFactory.createBadRequest(e.getMessage()));
         }
     }
     @GetMapping("/{nome}")
@@ -43,7 +41,7 @@ public class ReceitaController {
             return ResponseEntity.ok(receitaService.findByNome(nome));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    Problem.builder().status(400).exception(e.getMessage()).ocurredAt(LocalDateTime.now()).build());
+                    problemFactory.createBadRequest(e.getMessage()));
         }
     }
     @PostMapping("/filtro")
@@ -52,7 +50,7 @@ public class ReceitaController {
             return ResponseEntity.ok(receitaService.findByIngredientes(ingredientes));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    Problem.builder().status(400).exception(e.getMessage()).ocurredAt(LocalDateTime.now()).build());
+                    problemFactory.createBadRequest(e.getMessage()));
         }
     }
     @GetMapping("/filtro/{categoria}")
@@ -61,7 +59,7 @@ public class ReceitaController {
             return ResponseEntity.ok(receitaService.findByFlag(categoria));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    Problem.builder().status(400).exception(e.getMessage()).ocurredAt(LocalDateTime.now()).build());
+                    problemFactory.createBadRequest(e.getMessage()));
         }
     }
     @GetMapping("recomendacoes")
@@ -70,7 +68,7 @@ public class ReceitaController {
             return ResponseEntity.ok(new HashSet<>(receitaService.list().subList(0,10)));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    Problem.builder().status(400).exception(e.getMessage()).ocurredAt(LocalDateTime.now()).build());
+                    problemFactory.createBadRequest(e.getMessage()));
         }
     }
 }
