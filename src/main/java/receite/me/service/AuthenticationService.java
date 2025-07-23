@@ -10,6 +10,8 @@ import receite.me.auth.AuthenticationRequest;
 import receite.me.auth.AuthenticationResponse;
 import receite.me.auth.RegisterRequest;
 import receite.me.config.JwtService;
+import receite.me.dto.UsuarioDto;
+import receite.me.mapper.UsuarioMapper;
 import receite.me.model.Usuario;
 import receite.me.model.usuario.Cargo;
 import receite.me.repository.UsuarioRepository;
@@ -21,6 +23,7 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
+    private final UsuarioMapper usuarioMapper;
 
     public AuthenticationResponse register(RegisterRequest request){
         Usuario usuario = Usuario.builder()
@@ -31,9 +34,9 @@ public class AuthenticationService {
                 .bio(request.getBio())
                 .cargo(Cargo.USER)
                 .build();
-        usuarioRepository.save(usuario).getId();
+        usuarioRepository.save(usuario);
         var jwt = jwtService.generateToken(usuario);
-        return AuthenticationResponse.builder().token(jwt).user(usuario).build();
+        return AuthenticationResponse.builder().token(jwt).user(usuarioMapper.toDto(usuario)).build();
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) throws UsernameNotFoundException {
@@ -46,7 +49,7 @@ public class AuthenticationService {
         var usuario = usuarioRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new UsernameNotFoundException(""));
         var jwt = jwtService.generateToken(usuario);
-        return AuthenticationResponse.builder().token(jwt).user(usuario).build();
+        return AuthenticationResponse.builder().token(jwt).user(usuarioMapper.toDto(usuario)).build();
     }
 
     public boolean confirm(AuthenticationRequest request) throws UsernameNotFoundException {
@@ -56,9 +59,8 @@ public class AuthenticationService {
                         request.getSenha()
                 )
         );
-        var usuario = usuarioRepository.findByEmail(request.getEmail())
+        usuarioRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new UsernameNotFoundException(""));
-        var jwt = jwtService.generateToken(usuario);
         return true;
     }
 

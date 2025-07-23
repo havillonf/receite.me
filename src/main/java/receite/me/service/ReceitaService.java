@@ -4,41 +4,49 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
+import receite.me.dto.ReceitaDto;
+import receite.me.mapper.ReceitaMapper;
 import receite.me.model.Ingrediente;
-import receite.me.model.Receita;
 import receite.me.repository.IngredienteRepository;
 import receite.me.repository.ReceitaRepository;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class ReceitaService {
     private final IngredienteRepository ingredienteRepository;
     private final ReceitaRepository receitaRepository;
-    public List<Receita> list(){
-        return receitaRepository.findAll();
+    private final ReceitaMapper receitaMapper;
+
+    public List<ReceitaDto> list(){
+        return receitaRepository.findAll().stream()
+                .map(receitaMapper::toDto).collect(Collectors.toList());
     }
 
-    public Receita findById(Long id){
-        return receitaRepository.findById(id)
+    public ReceitaDto findById(Long id){
+        return receitaRepository.findById(id).map(receitaMapper::toDto)
                 .orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Receita não encontrada."));
     }
 
-    public List<Receita> findByNome(String nome){
-        return receitaRepository.findByNomeContainingIgnoreCase(nome);
+    public List<ReceitaDto> findByNome(String nome){
+        return receitaRepository.findByNomeContainingIgnoreCase(nome).stream()
+                .map(receitaMapper::toDto).collect(Collectors.toList());
     }
 
-    public List<Receita> findByIngredientes(List<String> nomeIngredientes) {
+    public List<ReceitaDto> findByIngredientes(List<String> nomeIngredientes) {
         Set<Ingrediente> ingredientes = new HashSet<>();
         nomeIngredientes.forEach(ingrediente -> {
             ingredientes.add(ingredienteRepository.findByNome(ingrediente).get());
         });
         var receitas = receitaRepository.findAll().stream().filter(receita -> ingredientes.containsAll(receita.getIngredientes()));
-        return receitas.toList();
+        return receitas.map(receitaMapper::toDto).collect(Collectors.toList());
     }
 
-    public List<Receita> findByFlag(String categoria){
+    public List<ReceitaDto> findByFlag(String categoria){
         return switch (categoria) {
             case "gluten" -> this.findByFlagGluten(true);
             case "lactose" -> this.findByFlagLactose(false);
@@ -49,20 +57,25 @@ public class ReceitaService {
         };
     }
 
-    private List<Receita> findByFlagSalgado(boolean b) {
-        return receitaRepository.findReceitasByFlagSalgado(b);
+    private List<ReceitaDto> findByFlagSalgado(boolean b) {
+        return receitaRepository.findReceitasByFlagSalgado(b).stream()
+                .map(receitaMapper::toDto).collect(Collectors.toList());
     }
-    private List<Receita> findByFlagDoce(boolean b) {
-        return receitaRepository.findReceitasByFlagDoce(b);
+    private List<ReceitaDto> findByFlagDoce(boolean b) {
+        return receitaRepository.findReceitasByFlagDoce(b).stream()
+                .map(receitaMapper::toDto).collect(Collectors.toList());
     }
 
-    public List<Receita> findByFlagGluten(boolean flagGluten){
-        return receitaRepository.findReceitasByFlagGluten(flagGluten);
+    public List<ReceitaDto> findByFlagGluten(boolean flagGluten){
+        return receitaRepository.findReceitasByFlagGluten(flagGluten).stream()
+                .map(receitaMapper::toDto).collect(Collectors.toList());
     }
-    public List<Receita> findByFlagLactose(boolean flagLactose){
-        return receitaRepository.findReceitasByFlagLactose(flagLactose);
+    public List<ReceitaDto> findByFlagLactose(boolean flagLactose){
+        return receitaRepository.findReceitasByFlagLactose(flagLactose).stream()
+                .map(receitaMapper::toDto).collect(Collectors.toList());
     }
-    public List<Receita> findByFlagVegetariano(boolean flagVegetariano){
-        return receitaRepository.findReceitasByFlagVegetariano(flagVegetariano);
+    public List<ReceitaDto> findByFlagVegetariano(boolean flagVegetariano){
+        return receitaRepository.findReceitasByFlagVegetariano(flagVegetariano).stream()
+                .map(receitaMapper::toDto).collect(Collectors.toList());
     }
 }

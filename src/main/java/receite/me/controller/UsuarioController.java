@@ -4,15 +4,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import receite.me.model.Ingrediente;
+import receite.me.dto.UsuarioDto;
+import receite.me.mapper.UsuarioMapper;
 import receite.me.model.ResetarSenhaInfo;
 import receite.me.model.Problem;
-import receite.me.model.Usuario;
-import receite.me.service.IngredienteService;
 import receite.me.service.UsuarioService;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import static org.springframework.http.ResponseEntity.created;
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
@@ -23,6 +21,8 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 public class UsuarioController {
     @Autowired
     private final UsuarioService usuarioService;
+    private final UsuarioMapper usuarioMapper;
+
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id){
         var usuarioOpt = usuarioService.findById(id);
@@ -40,11 +40,11 @@ public class UsuarioController {
         return ResponseEntity.notFound().build();
     }
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody Usuario usuario){
+    public ResponseEntity<?> create(@RequestBody UsuarioDto usuarioDto){
         try {
             return created(fromCurrentRequest()
                     .path("/{id}")
-                    .buildAndExpand(usuarioService.create(usuario)).toUri())
+                    .buildAndExpand(usuarioService.create(usuarioMapper.toEntity(usuarioDto))).toUri())
                     .build();
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
@@ -52,24 +52,10 @@ public class UsuarioController {
         }
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody Usuario usuario){
-        var usr = usuarioService.findByEmail(usuario.getEmail());
-        if(usr.isPresent()){
-            if(usr.get().getSenha().equals(usuario.getSenha())){
-                return ResponseEntity.ok(usr);
-            }else{
-                return ResponseEntity.badRequest().build();
-            }
-        }else{
-            return ResponseEntity.notFound().build();
-        }
-    }
-
     @PatchMapping("/update")
-    public ResponseEntity<?> update(@RequestBody Usuario usuario){
-        if (usuarioService.findById(usuario.getId()).isPresent()){
-            usuarioService.update(usuario);
+    public ResponseEntity<?> update(@RequestBody UsuarioDto usuarioDto){
+        if (usuarioService.findById(usuarioDto.getId()).isPresent()){
+            usuarioService.update(usuarioMapper.toEntity(usuarioDto));
             return ResponseEntity.ok().build();
         }else{
             return ResponseEntity.notFound().build();
