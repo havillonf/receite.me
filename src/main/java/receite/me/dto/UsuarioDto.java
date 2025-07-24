@@ -16,5 +16,6 @@ public class UsuarioDto {
     private String nome;
     private String avatar;
     private String bio;
+    private String codigoSenha;
     private Cargo cargo;
 }
