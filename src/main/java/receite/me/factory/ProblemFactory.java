@@ -12,7 +12,7 @@ public class ProblemFactory {
     public Problem createNotFound(String detail) {
         return Problem.builder()
             .status(HttpStatus.NOT_FOUND.value())
-            .exception("Recurso Não Encontrado " + detail)
+            .exception("Recurso Não Encontrado: " + detail)
             .ocurredAt(LocalDateTime.now())
             .build();
     }
@@ -20,7 +20,7 @@ public class ProblemFactory {
     public Problem createBadRequest(String detail) {
         return Problem.builder()
             .status(HttpStatus.BAD_REQUEST.value())
-            .exception("Requisição Inválida" + detail)
+            .exception("Requisição Inválida: " + detail)
             .ocurredAt(LocalDateTime.now())
             .build();
     }
