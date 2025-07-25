@@ -15,7 +15,6 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/wrapper/maven-wrapper.jar
-.apt_generated
 
 # IntelliJ IDEA
 .idea/
@@ -43,5 +42,5 @@ Thumbs.db
 /src/main/resources/application*.yml
 /src/main/resources/application*.properties
 
-# Specific to this project (based on the provided directory listing)
-/target/
+# Environment variables
+src/main/resources/.env

@@ -1,8 +1,10 @@
 spring:
+  config:
+    import: optional:file:.env[.properties]
   datasource:
-    url: jdbc:postgresql://db.qsiyobeencyejkwvmurr.supabase.co:5432/postgres
-    username: postgres
-    password: mgNDmGF12lJkl8bn
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -10,10 +12,10 @@ spring:
   flyway:
     locations: classpath:db/migration
   mail:
-    host: smtp.gmail.com
-    port: 587
-    username: receite.me.app@gmail.com
-    password: vosxbvsnnghydtgr
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     protocol: smtp
     properties.mail.smtp:
       auth: true
