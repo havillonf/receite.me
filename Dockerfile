@@ -9,7 +9,7 @@ RUN mvn clean install
 
 FROM openjdk:17-jdk-slim
 
-EXPOSE 8080
+EXPOSE ${PORT}
 
 COPY --from=build /target/receite.me-1.0-SNAPSHOT.jar app.jar
 
