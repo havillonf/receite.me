@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 import receite.me.auth.AuthenticationRequest;
 import receite.me.auth.RegisterRequest;
 import receite.me.service.AuthenticationService;
-import receite.me.factory.ProblemFactory;
+import receite.me.factory.ProblemFactoryImpl;
 
 @RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
 public class AuthenticationController {
     private final AuthenticationService authenticationService;
-    private final ProblemFactory problemFactory;
+    private final ProblemFactoryImpl problemFactoryImpl;
 
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody RegisterRequest request){
@@ -25,7 +25,7 @@ public class AuthenticationController {
             return ResponseEntity.ok(authenticationService.register(request));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
+                    problemFactoryImpl.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
 
@@ -36,7 +36,7 @@ public class AuthenticationController {
         }
         catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
+                    problemFactoryImpl.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
     

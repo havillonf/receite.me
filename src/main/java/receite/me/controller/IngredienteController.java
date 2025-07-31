@@ -8,16 +8,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import receite.me.service.IngredienteService;
-import receite.me.factory.ProblemFactory;
-
-import java.time.LocalDateTime;
+import receite.me.factory.ProblemFactoryImpl;
 
 @RestController
 @RequestMapping("ingredientes")
 @RequiredArgsConstructor
 public class IngredienteController {
     private final IngredienteService ingredienteService;
-    private final ProblemFactory problemFactory;
+    private final ProblemFactoryImpl problemFactoryImpl;
 
     @GetMapping
     public ResponseEntity<?> list(){
@@ -25,7 +23,7 @@ public class IngredienteController {
             return ResponseEntity.ok(ingredienteService.list());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
+                    problemFactoryImpl.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
 
@@ -35,7 +33,7 @@ public class IngredienteController {
             return ResponseEntity.ok(ingredienteService.findByNome(nome));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
+                    problemFactoryImpl.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
 

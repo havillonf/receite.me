@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import receite.me.service.ReceitaService;
-import receite.me.factory.ProblemFactory;
+import receite.me.factory.ProblemFactoryImpl;
 
 import java.util.HashSet;
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ReceitaController {
     private final ReceitaService receitaService;
-    private final ProblemFactory problemFactory;
+    private final ProblemFactoryImpl problemFactoryImpl;
 
     @GetMapping
     public ResponseEntity<?> list(){
@@ -36,7 +36,7 @@ public class ReceitaController {
             return ResponseEntity.ok(receitaService.findById(id));
         }catch (Exception e){
             return ResponseEntity.badRequest().body(
-                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
+                    problemFactoryImpl.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
     @GetMapping("/{nome}")
@@ -45,7 +45,7 @@ public class ReceitaController {
             return ResponseEntity.ok(receitaService.findByNome(nome));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
+                    problemFactoryImpl.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
     @PostMapping("/filtro")
@@ -54,7 +54,7 @@ public class ReceitaController {
             return ResponseEntity.ok(receitaService.findByIngredientes(ingredientes));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
+                    problemFactoryImpl.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
     @GetMapping("/filtro/{categoria}")
@@ -63,7 +63,7 @@ public class ReceitaController {
             return ResponseEntity.ok(receitaService.findByFlag(categoria));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
+                    problemFactoryImpl.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
     @GetMapping("recomendacoes")
@@ -72,7 +72,7 @@ public class ReceitaController {
             return ResponseEntity.ok(new HashSet<>(receitaService.list().subList(0,10)));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
+                    problemFactoryImpl.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
 }
