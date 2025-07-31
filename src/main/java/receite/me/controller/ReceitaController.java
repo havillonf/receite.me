@@ -1,6 +1,7 @@
 package receite.me.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,7 +36,7 @@ public class ReceitaController {
             return ResponseEntity.ok(receitaService.findById(id));
         }catch (Exception e){
             return ResponseEntity.badRequest().body(
-                    problemFactory.createBadRequest(e.getMessage()));
+                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
     @GetMapping("/{nome}")
@@ -44,7 +45,7 @@ public class ReceitaController {
             return ResponseEntity.ok(receitaService.findByNome(nome));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createBadRequest(e.getMessage()));
+                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
     @PostMapping("/filtro")
@@ -53,7 +54,7 @@ public class ReceitaController {
             return ResponseEntity.ok(receitaService.findByIngredientes(ingredientes));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createBadRequest(e.getMessage()));
+                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
     @GetMapping("/filtro/{categoria}")
@@ -62,7 +63,7 @@ public class ReceitaController {
             return ResponseEntity.ok(receitaService.findByFlag(categoria));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createBadRequest(e.getMessage()));
+                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
     @GetMapping("recomendacoes")
@@ -71,7 +72,7 @@ public class ReceitaController {
             return ResponseEntity.ok(new HashSet<>(receitaService.list().subList(0,10)));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createBadRequest(e.getMessage()));
+                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
 }

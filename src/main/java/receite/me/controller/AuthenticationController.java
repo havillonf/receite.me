@@ -1,6 +1,7 @@
 package receite.me.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,7 +25,7 @@ public class AuthenticationController {
             return ResponseEntity.ok(authenticationService.register(request));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createBadRequest(e.getMessage()));
+                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
 
@@ -35,7 +36,7 @@ public class AuthenticationController {
         }
         catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createBadRequest(e.getMessage()));
+                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
     

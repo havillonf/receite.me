@@ -2,6 +2,7 @@ package receite.me.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import receite.me.dto.UsuarioDto;
@@ -47,7 +48,7 @@ public class UsuarioController {
                     .build();
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createBadRequest(e.getMessage()));
+                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
 

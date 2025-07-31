@@ -1,6 +1,7 @@
 package receite.me.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,7 +25,7 @@ public class IngredienteController {
             return ResponseEntity.ok(ingredienteService.list());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createBadRequest(e.getMessage()));
+                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
 
@@ -34,7 +35,7 @@ public class IngredienteController {
             return ResponseEntity.ok(ingredienteService.findByNome(nome));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
-                    problemFactory.createNotFound(e.getMessage()));
+                    problemFactory.createProblem(e.getMessage(), HttpStatus.BAD_REQUEST));
         }
     }
 
